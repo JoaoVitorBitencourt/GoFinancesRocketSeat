@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import { FlatList } from "react-native";
+import { FlatList, TouchableOpacity } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper';
 
@@ -69,7 +69,7 @@ export const Icon = styled(Feather)`
   font-size: ${RFValue(24)}px;
 `;
 
-export const LogoutButton = styled(BorderlessButton)``;
+export const LogoutButton = styled(TouchableOpacity)``;
 
 export const HighlightCards = styled.ScrollView.attrs({
   horizontal: true,

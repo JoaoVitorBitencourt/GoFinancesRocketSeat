@@ -24,6 +24,7 @@ import {
 import { addMonths, format, subMonths } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { ActivityIndicator } from "react-native";
+import { useAuth } from "../../hooks/auth";
 
 interface TransactionData {
     type: 'positive' | 'negative';
@@ -48,8 +49,9 @@ export function Resume(){
     const [totalByCategory, setTotalByCategory] = useState<CategoryData[]>([]);
 
     const theme = useTheme();
+    const { user } = useAuth();
 
-    const dataKey = '@gofinances:transactions';
+    const dataKey = `@gofinances:transactions_user:${user.id}`;
 
     function handleDateChange(action: 'next' | 'prev') {        
         if(action === 'next') {
